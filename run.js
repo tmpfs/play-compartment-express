@@ -1,5 +1,5 @@
 import fs from 'fs'
-import crypto from 'crypto'
+import http from 'http'
 import { builtinModules } from 'module'
 import '../endo/packages/ses/index.js'
 // import { resolve } from '../endo/packages/compartment-mapper/src/node-module-specifier.js';
@@ -16,8 +16,8 @@ import {
 } from '../endo/packages/compartment-mapper/index.js';
 
 
-const readPowers = makeNodeReadPowers(fs, crypto);
-const entryPath = new URL('node.js', import.meta.url).toString()
+const readPowers = makeNodeReadPowers(fs, http);
+const entryPath = new URL('server.js', import.meta.url).toString()
 
 // const bufferExitNamespaceBox = { namespace: {} }
 // const bufferExitModule = { import: async () => { return bufferExitNamespaceBox } }
